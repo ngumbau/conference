@@ -9,7 +9,7 @@ const indexRoute = require('./index')
 module.exports = () => {
 
     router.get('/', (req, res, next) => {
-        return res.send("Index");
+        return res.render("index.pug");
     });
 
     router.use('/speakers', speakersRoute());
