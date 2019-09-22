@@ -7,8 +7,12 @@ const app = express();
 const config = configs[app.get('env')];
 
 app.set('view engine', 'pug')
-app.locals.pretty = true;
+if(app.get('env') === 'development'){
+    app.locals.pretty = true;
+}
 app.set('views', path.join(__dirname, "./views"));
+app.locals.title = config.sitename;
+
 
 const routes = require('./routes');
 

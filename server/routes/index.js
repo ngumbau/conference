@@ -9,7 +9,9 @@ const indexRoute = require('./index')
 module.exports = () => {
 
     router.get('/', (req, res, next) => {
-        return res.render("index.pug");
+        return res.render("index.pug",{
+            page: 'Home',
+        });
     });
 
     router.use('/speakers', speakersRoute());
